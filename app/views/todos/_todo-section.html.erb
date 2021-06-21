@@ -8,7 +8,6 @@
       <% todos.all.each do |todo| %>
         <li class="TodoItem">
           <div class="TodoItem-container">  
-            <% if todo.completed %>
               <input class="TodoItem-checkbox" type="checkbox" <%= todo.completed ? "checked" : "" %>  />  
               <p  class='<%= todo.completed ? "TodoItem-completedText" : "" %>'> 
                 <%= todo.todo_text %>  
