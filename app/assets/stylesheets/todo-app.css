@@ -78,6 +78,9 @@ ul {
   width: 16px;
   margin-right: 8px;
 }
+.TodoItem-completedText{
+  text-decoration: line-through;
+}
 .TodoItem-dueDate{
   font-size: 10px;
   color: #8d6e6e;
