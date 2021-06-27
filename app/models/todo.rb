@@ -1,10 +1,10 @@
 class Todo < ActiveRecord::Base
   def self.to_displayable_list
-    all.map { |todo| todo.to_displayable_string }
+    all.map { |todo| todo.to_displayable_string }.join("\n")
   end
 
   def self.overdue
-    where("due_date <  ?", Date.today)
+    where("due_date <  ? AND completed = ?", Date.today, false)
   end
 
   def self.due_today
