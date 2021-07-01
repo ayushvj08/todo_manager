@@ -1,4 +1,6 @@
 class Todo < ActiveRecord::Base
+  belongs_to :user
+
   def self.to_displayable_list
     all.map { |todo| todo.to_displayable_string }.join("\n")
   end
