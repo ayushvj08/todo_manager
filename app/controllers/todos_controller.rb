@@ -25,6 +25,7 @@ class TodosController < ApplicationController
       redirect_to todos_path
     else
       flash[:error] = new_todo.errors.full_messages.join(", ")
+      redirect_to todos_path
     end
 
     # response_text = "Hey your new todo is created with id #{new_todo.id}"
