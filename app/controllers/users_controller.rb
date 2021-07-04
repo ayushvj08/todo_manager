@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     )
 
     if new_user.save
+      flash[:msg] = "Account successfully created! Please Sign-In"
       redirect_to "/"
     else
       flash[:error] = new_user.errors.full_messages.join(", ")
