@@ -1,5 +1,8 @@
 class Todo < ActiveRecord::Base
   belongs_to :user
+  validates :todo_text, presence: true
+  validates :todo_text, length: { minimun: 2 }
+  validates :due_date, presence: true
 
   def self.to_displayable_list
     all.map { |todo| todo.to_displayable_string }.join("\n")
